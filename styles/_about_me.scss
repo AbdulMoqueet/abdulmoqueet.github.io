@@ -1,0 +1,87 @@
+.about-me-section {
+    background-color: $bg-grey-light;
+    padding: 5rem 0;
+
+    .main-title{
+      margin: 0;
+    }
+  
+    .left {
+      margin-top: 3rem;
+      h2 {
+        position: relative;
+        margin-bottom: 2rem;
+        
+        &::before {
+          position: absolute;
+          content: "";
+          height: 2px;
+          background-color: $sky-color;
+          left: 0;
+          right: 0;
+          bottom: -15px;
+          width: 15%;
+        }
+      }
+      .about-me-text {
+        font-size: 75%;
+        font-weight: 300;
+      }
+    }
+  
+    .box {
+      user-select: text;
+      position: relative;
+      margin-top: 3rem;
+      background-color: $bg-grey-dark;
+      padding: 1.5rem;
+      // margin-right: 13px;
+      // margin-left: 15px;
+      ul {
+        list-style: none;
+        font-size: 80%;
+      }
+      li {
+        margin-bottom: 0.7rem;
+        display: flex;
+        align-items: center;
+        vertical-align: middle;
+        &:last-child {
+          margin: 0;
+        }
+      }
+      .icon-rounded {
+        color: #ffffff;
+        background-color: $sky-color;
+        padding: 10px;
+        font-size: 110%;
+        border-radius: 50%;
+        margin-right: 0.7rem;
+      }
+  
+      .social-media {
+        line-height: 1.42857143;
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -12px;
+        height: 80%;
+        width: 35px;
+        background: linear-gradient(135deg, $sky-color 0%, $sky-color-dark 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 110%;
+        .icon {
+          color: #ffffff;
+          cursor: pointer;
+          transition: 0.5s all;
+          &:hover {
+            transform: scale(1.2) rotate(360deg);
+          }
+        }
+      }
+    }
+  }  

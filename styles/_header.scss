@@ -1,0 +1,248 @@
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
+    url(../img/top-bg.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+
+  nav {
+    transition: all 0.6s;
+  }
+
+  .desktop-nav {
+    display: flex;
+    padding-top: 40px;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      font-size: 200%;
+      color: #fff;
+      font-weight: 500;
+      span {
+        color: $sky-color;
+      }
+    }
+
+    .main-nav {
+      list-style: none;
+
+      li {
+        position: relative;
+        display: inline-block;
+        margin-left: 40px;
+        border-bottom: solid 2px transparent;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+          font-size: 80%;
+          font-weight: 400;
+          padding-bottom: 5px;
+        }
+        &:hover::before {
+          transform: scale(1);
+        }
+        &::before {
+          position: absolute;
+          content: "";
+          width: 110%;
+          height: 0;
+          bottom: -5px;
+          left: -5%;
+          border-bottom: 2px solid $sky-color;
+          transform: scale(0);
+          transition: transform 0.3s ease-in-out;
+        }
+      }
+
+      
+    }
+  }
+
+  .mobile-nav {
+    position: absolute;
+    width: 100%;
+    background-color: #202020;
+
+    .flex {
+      position: relative;
+      display: flex;
+      padding: 0.5rem 0;
+      align-items: center;
+      padding-left: 15px;
+    }
+
+    .logo {
+      font-size: 160%;
+      color: #fff;
+      font-weight: 500;
+      span {
+        color: $sky-color;
+      }
+    }
+
+    .nav-burger {
+      position: absolute;
+      right: 15px;
+      width: 30px;
+      transition: transform 0.6s;
+      z-index: 5;
+
+      .line-1 {
+        background-color: $sky-color;
+        height: 2px;
+        margin-right: 10px;
+        transition: all 0.6s;
+        margin-bottom: 3px;
+        width: 60%;
+      }
+
+      .line-2 {
+        background-color: $sky-color;
+        height: 2px;
+        transition: all 0.6s;
+        margin: 0.3rem 0;
+      }
+    }
+
+    .line-3 {
+      background-color: $sky-color;
+      height: 2px;
+      margin-left: 10px;
+      width: 60%;
+      margin-top: 3px;
+      transition: all 0.6s;
+    }
+
+    ul {
+      position: fixed;
+      overflow-y: auto;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 265px;
+      z-index: 3;
+      background-color: $bg-grey-light;
+
+      transform: translateX(-270px);
+      transition: transform 0.6s;
+      list-style: none;
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        width: 100%;
+        border-top: 1px solid #3a3939;
+        border-bottom: 1px solid #292929;
+        padding: 15px 28px;
+        font-size: 80%;
+        
+      }
+  
+      .logo {
+        text-align: center;
+        font-size: 150%;
+        padding: 60px 0;
+        border-bottom: 1px solid #323233;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+      }
+
+    }
+
+    .left-nav-peek{
+      transform: translateX(0);
+    }
+
+  }
+
+  .main-nav-active {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    top: -80px;
+    background-color: #202020;
+    .desktop-nav {
+      padding: 0.4rem 0;
+    }
+    .logo {
+      font-size: 160%;
+    }
+  }
+
+  .container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 400;
+    font-size: 120%;
+    padding-left: 15px;
+    .i-am {
+      margin-bottom: 1rem;
+    }
+    .name {
+      font-size: 300%;
+      color: #ffffff;
+      margin-left: -5px;
+      margin-bottom: 1rem;
+    }
+    .desc {
+      color: #ffffff;
+      .typer {
+        color: $sky-color !important;
+      }
+    }
+  }
+
+  .discover {
+    position: absolute;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    color: #fff;
+    text-decoration: none;
+    right: 40px;
+    bottom: 40px;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 600;
+    font-size: 80%;
+    cursor: pointer;
+    .icon {
+      transform: rotate(180deg);
+      font-weight: normal;
+      animation: discover_arrow 1s infinite;
+    }
+  }
+}
+
+@keyframes discover_arrow {
+  50% {
+    transform: rotate(180deg) translateY(10px);
+  }
+}
+
+@keyframes hire-me_animation {
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.nav-burger-active {
+  transform: rotate(45deg);
+}
+
+.nav-burger-active-line-2 {
+  transform: rotate(-45deg);
+  margin: 0 !important;
+}
+
+.body-scroll-disable{
+  overflow-y: hidden;
+}
+
+.nav-active {
+  color: $sky-color !important;
+}
